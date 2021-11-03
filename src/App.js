@@ -5,6 +5,13 @@ import './App.css';
 function App() {
   const [countries, setCountries] = useState(["mexico", "USA", "Russia"])
   console.log("pais",countries)
+
+
+  useEffect(()=>{
+    const getCountries= async () => {
+      await axios("https://disease.sh/v3/covid-19/countries")
+    }
+  },[])
   return (
     <div className="app">
       <div className="header">
