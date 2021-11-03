@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {MenuItem, FormControl, Select} from '@material-ui/core'
+import axios from 'axios'
 import './App.css';
 
 function App() {
@@ -9,8 +10,11 @@ function App() {
 
   useEffect(()=>{
     const getCountries= async () => {
-      await axios("https://disease.sh/v3/covid-19/countries")
+    const data = await axios("https://disease.sh/v3/covid-19/countries")
+    console.log('data', data)
+
     }
+    getCountries();
   },[])
   return (
     <div className="app">
