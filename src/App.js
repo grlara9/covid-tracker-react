@@ -4,18 +4,27 @@ import axios from 'axios'
 import './App.css';
 
 function App() {
-  const [countries, setCountries] = useState(["mexico", "USA", "Russia"])
+  const [countries, setCountries] = useState([])
   console.log("pais",countries)
 
 
   useEffect(()=>{
     const getCountries= async () => {
-    const data = await axios("https://disease.sh/v3/covid-19/countries")
-    console.log('data', data)
-
-    }
+      fetch("https://disease.sh/v3/covid-19/countries")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('data', data)
+        const countries = data.map((country) => ({
+          name: country.country,
+          value: country.countryInfo.iso2
+        }));
+       
+      setCountries(countries)
+    })
+  }
     getCountries();
   },[])
+
   return (
     <div className="app">
       <div className="header">
@@ -23,7 +32,7 @@ function App() {
      <FormControl className="header__dropdown">
       <Select variant="outlined" value="abc">
         {countries.map((country)=>(
-          <MenuItem value={country}>{country}</MenuItem>
+          <MenuItem value={country.value}>{country.name}</MenuItem>
         ))}
       </Select>
      </FormControl>
