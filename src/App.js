@@ -23,7 +23,11 @@ function App() {
   },[])
 
   const onCountryChange = async (event) =>{
-    const countryCode =
+    const countryCode =event.target.value;
+
+    console.log("Estemero", countryCode)
+
+    setCountry(countryCode)
   }
   return (
     <div className="app">
