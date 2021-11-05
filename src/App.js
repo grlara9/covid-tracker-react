@@ -44,7 +44,7 @@ function App() {
      </FormControl>
     </div>
     <div className="app__stats">
-
+          <InfoBox />
     </div>
     </div>
   );
