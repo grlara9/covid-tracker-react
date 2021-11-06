@@ -6,7 +6,13 @@ const InfoBox =({title, cases, total})=>{
         <div>
             <Card className="infoBox">
                 <CardContent>
-                    <h1>hola</h1>
+                    <Typography color="textSecondary">{title}</Typography>
+
+                    <h2>{cases}</h2>
+
+                    <Typography color="textSecondary">
+                        {total} Total
+                    </Typography>
                 </CardContent>
             </Card>
         </div>

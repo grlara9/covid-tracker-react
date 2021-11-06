@@ -5,4 +5,12 @@ margin: 0;
 .header{
   display: flex;
   justify-content: space-between;
+  background-color: blue;
+  margin-bottom: 12px;
+}
+
+.app__stats{
+display: flex;
+justify-content: space-between;
+background-color: blueviolet;
 }

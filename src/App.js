@@ -44,7 +44,9 @@ function App() {
      </FormControl>
     </div>
     <div className="app__stats">
-          <InfoBox />
+          <InfoBox title="coronavirus" cases={12334} total={4000}/>
+          <InfoBox title="Recover" cases={12334} total={4000}/>
+          <InfoBox title="Deaths" cases={12334} total={4000}/>
     </div>
     </div>
   );
