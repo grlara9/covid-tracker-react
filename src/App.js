@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   const [countries, setCountries] = useState([])
   const [country, setCountry] = useState("worldwide")
+  const [countryInfo, setCountryInfo]= ({})
   console.log("pais",countries)
 
 
@@ -30,6 +31,8 @@ function App() {
     console.log("Estemero", countryCode)
 
     setCountry(countryCode)
+    const URL= countryCode === "worldwide" ?  "https://disease.sh/v3/covid-19/all"
+    : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
   }
   return (
     <div className="app">
