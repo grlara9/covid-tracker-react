@@ -11,7 +11,12 @@ body{
   background-color: blue;
   margin-bottom: 12px;
 }
-
+.app{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  flex: 0.9;
+}
 .app__stats{
 display: flex;
 justify-content: space-around;

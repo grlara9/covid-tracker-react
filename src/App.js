@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {MenuItem, FormControl, Select, Card, CardContent} from '@material-ui/core'
 import InfoBox from './components/InfoBox';
+import Map from './components/Map';
 import axios from 'axios'
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
   }
   return (
     <div className="app">
+      <div className="app__left">
       <div className="header">
       <h1>COVID-19</h1>
      <FormControl className="header__dropdown">
@@ -48,6 +50,15 @@ function App() {
           <InfoBox title="Recover" cases={12334} total={4000}/>
           <InfoBox title="Deaths" cases={12334} total={4000}/>
     </div>
+    <Map />
+    </div>
+
+    <Card className="app__right">
+          <CardContent>
+            <h2>table</h2>
+          </CardContent>
+    </Card>
+
     </div>
   );
 }
