@@ -8,9 +8,9 @@ import './App.css';
 function App() {
   const [countries, setCountries] = useState([])
   const [country, setCountry] = useState("worldwide")
-  const [countryInfo, setCountryInfo]= ({})
+  const [countryInfo, setCountryInfo]= useState({})
   console.log("pais",countries)
-
+  console.log("si aqui sale info sirvio", countryInfo)
 
   useEffect(()=>{
     const getCountries= async () => {
@@ -33,6 +33,13 @@ function App() {
     setCountry(countryCode)
     const URL= countryCode === "worldwide" ?  "https://disease.sh/v3/covid-19/all"
     : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+
+    const {data} = await axios.get(URL)
+    console.log("this is data ,", data)
+    setCountry(countryCode)
+
+    setCountryInfo(data)
+
   }
   return (
     <div className="app">
