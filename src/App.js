@@ -12,6 +12,15 @@ function App() {
   console.log("pais",countries)
   console.log("si aqui sale info sirvio", countryInfo)
 
+  useEffect(() => {
+    const getWorldWide = async () => {
+    const {data} = await axios.get("https://disease.sh/v3/covid-19/all")
+    console.log("worldwide data>>>", data)
+        setCountryInfo(data);
+    }
+    getWorldWide()
+  }, []);
+
   useEffect(()=>{
     const getCountries= async () => {
      const {data} = await axios.get("https://disease.sh/v3/covid-19/countries")
@@ -56,9 +65,9 @@ function App() {
      </FormControl>
     </div>
     <div className="app__stats">
-          <InfoBox title="coronavirus" cases={12334} total={4000}/>
-          <InfoBox title="Recover" cases={12334} total={4000}/>
-          <InfoBox title="Deaths" cases={12334} total={4000}/>
+          <InfoBox title="coronavirus" cases={countryInfo.todayCases} total={countryInfo.cases}/>
+          <InfoBox title="Recover" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
+          <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
     <Map />
     </div>
