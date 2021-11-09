@@ -67,14 +67,14 @@ function App() {
     <div className="app__stats">
           <InfoBox title="coronavirus" cases={countryInfo.todayCases} total={countryInfo.cases}/>
           <InfoBox title="Recover" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-          <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
+          <InfoBox color="Error" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
     <Map />
     </div>
 
     <Card className="app__right">
           <CardContent>
-            <h2>table</h2>
+            <Table />
           </CardContent>
     </Card>
 

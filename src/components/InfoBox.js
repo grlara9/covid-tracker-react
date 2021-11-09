@@ -1,10 +1,12 @@
 import React from 'react'
 import {Card, CardContent, Typography} from "@material-ui/core"
 
+
 const InfoBox =({title, cases, total})=>{
     return(
         <div>
-            <Card className="infoBox">
+           
+            <Card className="infoBox" >
                 <CardContent>
                     <Typography color="textSecondary">{title}</Typography>
 
@@ -15,6 +17,7 @@ const InfoBox =({title, cases, total})=>{
                     </Typography>
                 </CardContent>
             </Card>
+            
         </div>
     )
 }
