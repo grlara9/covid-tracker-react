@@ -9,6 +9,7 @@ function App() {
   const [countries, setCountries] = useState([])
   const [country, setCountry] = useState("worldwide")
   const [countryInfo, setCountryInfo]= useState({})
+  const [tableData, setTableData]= useState([])
   console.log("pais",countries)
   console.log("si aqui sale info sirvio", countryInfo)
 
@@ -29,6 +30,7 @@ function App() {
           name: country.country,
           value: country.countryInfo.iso2
         }));
+        setTableData(data)
       setCountries(countries)
       }
     getCountries();
@@ -74,7 +76,7 @@ function App() {
 
     <Card className="app__right">
           <CardContent>
-            <Table />
+            <Table countries={tableData}/>
           </CardContent>
     </Card>
 
