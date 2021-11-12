@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {MenuItem, FormControl, Select, Card, CardContent} from '@material-ui/core'
 import InfoBox from './components/InfoBox';
+import Table from './components/Table';
 import Map from './components/Map';
 import axios from 'axios'
 import './App.css';
@@ -12,6 +13,7 @@ function App() {
   const [tableData, setTableData]= useState([])
   console.log("pais",countries)
   console.log("si aqui sale info sirvio", countryInfo)
+  console.log("CountryTable Data>>>", tableData)
 
   useEffect(() => {
     const getWorldWide = async () => {
