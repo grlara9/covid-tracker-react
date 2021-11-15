@@ -7,6 +7,7 @@ import { sortData } from './components/utils';
 import axios from 'axios'
 import './App.css';
 
+
 function App() {
   const [countries, setCountries] = useState([])
   const [country, setCountry] = useState("worldwide")
@@ -71,20 +72,19 @@ function App() {
      </FormControl>
     </div>
     <div className="app__stats">
-          <InfoBox title="coronavirus" cases={countryInfo.todayCases} total={countryInfo.cases}/>
-          <InfoBox title="Recover" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-          <InfoBox color="Error" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
+          <InfoBox color="warning"title="coronavirus" cases={countryInfo.todayCases} total={countryInfo.cases}/>
+          <InfoBox color="info" title="Recover" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
+          <InfoBox color="danger" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
     <Map />
     </div>
 
     <Card className="app__right">
-          <CardContent>
-            <Table countries={tableData}/>
-          </CardContent>
+      <CardContent>
+        <Table countries={tableData}/>
+      </CardContent>
     </Card>
-
-    </div>
+  </div>
   );
 }
 

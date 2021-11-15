@@ -1,21 +1,21 @@
 import React from 'react'
-import {Card, CardContent, Typography} from "@material-ui/core"
+import {Card} from 'react-bootstrap'
 
 
-const InfoBox =({title, cases, total})=>{
+const InfoBox =({title, cases, total, color})=>{
     return(
         <div>
            
-            <Card className="infoBox" >
-                <CardContent>
-                    <Typography color="textSecondary">{title}</Typography>
+            <Card bg={color}>
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
 
                     <h2>{cases}</h2>
 
-                    <Typography color="textSecondary">
+                    <Card.Title>
                         {total} Total
-                    </Typography>
-                </CardContent>
+                    </Card.Title>
+                </Card.Body>
             </Card>
             
         </div>
