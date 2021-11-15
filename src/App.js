@@ -72,8 +72,8 @@ function App() {
      </FormControl>
     </div>
     <div className="app__stats">
-          <InfoBox color="warning"title="coronavirus" cases={countryInfo.todayCases} total={countryInfo.cases}/>
-          <InfoBox color="info" title="Recover" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
+          <InfoBox color="warning"title="Infected" cases={countryInfo.todayCases} total={countryInfo.cases} />
+          <InfoBox color="info" title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
           <InfoBox color="danger" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
     <Map />
