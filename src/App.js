@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Container } from 'react-bootstrap';
 import {MenuItem, FormControl, Select, Card, CardContent} from '@material-ui/core'
 import InfoBox from './components/InfoBox';
 import Table from './components/Table';
@@ -59,6 +60,7 @@ function App() {
   }
   return (
     <>
+    <Container>
       <div className="header">
       <h1>COVID-19</h1>
      <FormControl className="header__dropdown">
@@ -75,14 +77,13 @@ function App() {
           <InfoBox color="info" title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
           <InfoBox color="danger" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
-      <Map />
-    
 
     <Card className="app__right">
       <CardContent>
         <Table countries={tableData}/>
       </CardContent>
     </Card>
+    </Container>
   </>
   );
 }
