@@ -58,8 +58,7 @@ function App() {
 
   }
   return (
-    <div className="app">
-      <div className="app__left">
+    <>
       <div className="header">
       <h1>COVID-19</h1>
      <FormControl className="header__dropdown">
@@ -69,22 +68,22 @@ function App() {
           <MenuItem value={country.value}>{country.name}</MenuItem>
         ))}
       </Select>
-     </FormControl>
+     </FormControl> 
     </div>
     <div className="app__stats">
           <InfoBox color="warning"title="Infected" cases={countryInfo.todayCases} total={countryInfo.cases} />
           <InfoBox color="info" title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
           <InfoBox color="danger" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
-    <Map />
-    </div>
+      <Map />
+    
 
     <Card className="app__right">
       <CardContent>
         <Table countries={tableData}/>
       </CardContent>
     </Card>
-  </div>
+  </>
   );
 }
 
