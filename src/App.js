@@ -78,7 +78,10 @@ function App() {
           <InfoBox color="danger" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
     </div>
 
+     
     <Card className="app__right">
+
+
       <CardContent>
         <Table countries={tableData}/>
       </CardContent>
